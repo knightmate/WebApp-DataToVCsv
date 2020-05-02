@@ -1,0 +1,25 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "Mock App for CSV file ",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Meghraj1998/WebApp-DataToVCsv.git"
+  },
+  "author": "Meghrajdeshmukh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Meghraj1998/WebApp-DataToVCsv/issues"
+  },
+  "homepage": "https://github.com/Meghraj1998/WebApp-DataToVCsv#readme"
+}
