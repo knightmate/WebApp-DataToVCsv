@@ -1,15 +1,21 @@
 const express=require('express');
 var router=express.Router();
 
+var passport=require('passport');
+var local=require('../config/passport-local');
 
 
-router.get('/students', function(req,res){
+
+router.use('/emp',require('./emp'));
+
+
+router.use('/', passport.checkAuthentication, function(req,res){
+    console.log("user is logged in dude");
+    res.render('home.ejs', {
+
+    });
+} )
  
-    console.log("into the server of student");
-    
-});
 
-
-
-
-module.exports=router;
+  
+module.exports=router; 

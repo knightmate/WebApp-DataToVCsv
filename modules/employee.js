@@ -2,7 +2,7 @@ var mongoose=require('mongoose');
 
 var SchemaEmp=mongoose.Schema({
 
-    name:{
+    email:{
         type:String,
         require:true,
 
@@ -12,7 +12,7 @@ var SchemaEmp=mongoose.Schema({
         require:true,
     },
     password:{
-        type:password,
+        type:String,
         require:true,
     }
 
