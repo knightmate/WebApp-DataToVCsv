@@ -16,6 +16,27 @@ var controller=require('../controllers/buildcsv');
 router.use('/emp',require('./emp'));
 router.use('/student', require('./student'));
 
+router.get('/download', function(req,res){
+   
+  console.log(req.body);
+  
+  res.download('/Users/meghrajdeshmukh/Desktop/WebDevelopment/node/Codingninjas CSV(Mock5)/output.csv',function(err, completed){
+      if(err)
+      {
+          console.log(err);
+      }
+      else{
+         
+        console.log(completed);
+        
+      }
+  })
+
+
+
+});
+
+
 router.use('/', passport.checkAuthentication, function(req,res){
     console.log("user is logged in dude");
 var interview=null;
