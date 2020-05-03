@@ -52,8 +52,7 @@ passport.deserializeUser(function(id,done){
 //it is passed as a middle ware
 passport.checkAuthentication=function(req,res,next){
     //if user is signed in then pass the request on next(controller action)
-     
-    console.log(req);
+  
     if(req.cookies)
     {
         console.log("autheticated");

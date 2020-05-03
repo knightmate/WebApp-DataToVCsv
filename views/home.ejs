@@ -1,41 +1,134 @@
 <html>
-    <title>
-        Home Page
-    </title>
+   
+ 
+<head>
+  
+     
+    <link href= "/Css/homestyle.css"  rel=" stylesheet " />
+    
+    </head>
+ 
 <body>
 
-    <form style="display: flex; flex-direction: column;" >
-       
-        <label>Name</label>
-        <input type="text" name="Name" required="true">
-       
-        <label>College</label> 
-       <input type="text" name="college" required="true">
+    <div class="main">
 
-       <label>status</label> 
-       <input type="text" name="status" required="true">
+        <div class="Info" >
 
 
-       <label>DSA Score</label> 
-       <input type="text" name="dsa" required="true">
+<table>
+    <tr>
+      
+        <th>StudentName</th>
+        <th>College</th>
+        <th>Status </th>
+        <th> Marks </th>
+        <th> Interviews</th>
+        
+         
+      </tr>
+      <%var i=0;%>
+    <% for(obj of story) {%>
+        
+    
+    
+    <tr>
+      <td><%=obj.StdId.name%></td>
+      <td><%=obj.StdId.college%></td>
+      <td><%=obj.StdId.status%></td>
+      <td>
+        <table>
+        <tr>
+      <th>DSA</th>
+      <th>WebD</th>
+      <th>React </th>
+      </tr>
+         <tr>
+        <td><%=obj.Dsa%></td>
+        <td><%=obj.Web%></td>
+        <td><%=obj.React%></td>
+      </tr>
+    </table>
+    </td>
+   
+    <td>
+        <table>
+        <tr>
+      <th>Company</th>
+      <th>Date</th>
+      <th>Result </th>
+      </tr>
+         <tr>
+        <td><%=interview[i].Company%></td>
+        <td><%=interview[i].Date.getDate()+"/"+interview[i].Date.getMonth()%></td>
+        <td><%=interview[i].Result%></td>
+      </tr>
+    </table>
+    </td>
+    
+    
+    <tr>
 
-       <label>WebD Score</label> 
-       <input type="text" name="web" required="true">
+        <%i++%>
+        <% }%>
+  </table>
+   
+   
+    
+
+           
+        </div>
+
+        <div class="addData">
+            add the student Information
+           
+              
 
 
-       <label>React Score</label> 
-       <input type="text" name="react" required="true">
+            <form
+             action="/student/adddata" method="POST"
+            style="display: flex; flex-direction:column;width:auto ;" >
+                 
+                 Name<input type="text" name="name"/>
+                 College<input type="text" name="college"/>
+                 Status
+                 <input type="radio" id="status" name="status" value="Placed">
+                   <label for="Placed">Placed</label><br>
+  <input type="radio" id="status" name="status" value="NotPlaced">
+  <label for="status">NotPlaced</label><br>
+                 
+                        
+
+                 <div class="marks"><h3> Marks </h3>
+                 DSA<input type="text" name="dsa"/>
+                 WebD<input type="text" name="webd"/>
+                 React<input type="text" name="react"/>
+                 </div>
+                 
+                 <div class="interview"><h3> Interview </h3>
+                 Company<input type="text" name="company"/>
+                 Date<input type="text" name="date"/>
+                 Result 
+                 <input type="radio" id="interview" name="interview" value="Pass">
+                   <label for="Pass">Pass</label><br>
+
+                   <input type="radio" id="interview" name="interview" value="Fail">
+                   <label for="interview">Fail</label><br>
+                 </div>
+
+                 <input type="submit" value="submit" style="width: fit-content;margin-top: 3%;">
+
+               </form
+               >
+
+        </div>
 
 
 
-       <label>Interview</label>
-       <label>company Name</label> 
-       <input type="text" name="companyname" required="true">
 
 
-       <input type="submit" value="submit">
 
-    </form>
+
+    </div>
 
 
 

@@ -2,11 +2,11 @@ const mongoose=require('mongoose');
 
 var Schemainterview=mongoose.Schema({
 
-   company:{
+   Company:{
         type:String,
-        require:true
+        requir:true
     },
-    date:{
+    Date:{
         type:Date,
         require:true,
     },
@@ -15,7 +15,7 @@ var Schemainterview=mongoose.Schema({
         enum: ["Pass", "Fail", "Hole","Didn't Attempt"] 
     
     },
-  stdId:{
+  StdId:{
     type:mongoose.Schema.Types.ObjectId,
     ref:'Student'
 }

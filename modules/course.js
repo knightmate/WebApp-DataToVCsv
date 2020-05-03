@@ -2,7 +2,7 @@ const mongoose=require('mongoose');
 
 var Schemacourse=mongoose.Schema({
 
-   DSA:{
+   Dsa:{
         type:String,
         require:true
     },
@@ -12,10 +12,10 @@ var Schemacourse=mongoose.Schema({
     },
     React:{
         type:String,
-        enum: ["Placed", "NotPlaced"] 
+         
     
     },
-    stdId:{
+    StdId:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Student'
     }
